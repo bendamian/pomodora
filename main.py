@@ -1,5 +1,7 @@
 from tkinter import *
-from tkinter import ttk
+import ttkbootstrap as ttk
+
+# from tkinter import ttk
 
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
@@ -26,10 +28,10 @@ window.title('Pomodoro')
 window.config(padx=100, pady=50, bg=YELLOW)
 
 # widgets
-label1 = ttk.Label(window, text='Label 1', background='red')
-label2 = ttk.Label(window, text='Label 2', background='blue')
-button1 = ttk.Button(window, text='start')
-button2 = ttk.Button(window, text='rest')
+label1 = Label(window, text='Timer', fg=GREEN, bg=YELLOW , font=(FONT_NAME, 50))
+label2 = Label(window, text='✔', fg=GREEN,bg=YELLOW,font=(FONT_NAME, 25))
+button1 = Button(window, text='Start')
+button2 = Button(window, text='Reset')
 
 canvas = Canvas(width=220, height=224, bg=YELLOW, highlightthickness=0)
 tomato_img = PhotoImage(file="tomato.png")
@@ -49,7 +51,7 @@ label1.grid(row=0, column=1, sticky='n')
 canvas.grid(row=1, column=1, sticky='nsew')
 button1.grid(row=3, column=0, sticky='w')
 button2.grid(row=3, column=2, sticky='e')
-label2.grid(row=4, column=1, sticky='')
+label2.grid(row=4, column=1, )
 
 # run
 window.mainloop()
